@@ -1,33 +1,48 @@
-import resolve from 'rollup-plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
-import commonjs from 'rollup-plugin-commonjs';
-import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
-import { terser } from 'rollup-plugin-terser';
-import config from 'sapper/config/rollup.js';
-import pkg from './package.json';
-
-const mode = process.env.NODE_ENV;
-const dev = mode === 'development';
-const legacy = !!process.env.SAPPER_LEGACY_BUILD;
-
+require = require('esm')(module)
+import resolve from 'rollup-plugin-node-resolve'
+import replace from 'rollup-plugin-replace'
+import builtins__plugin from 'rollup-plugin-node-builtins'
+import globals__plugin from 'rollup-plugin-node-globals'
+import commonjs from 'rollup-plugin-commonjs'
+import svelte from 'rollup-plugin-svelte'
+import babel from 'rollup-plugin-babel'
+import { terser } from 'rollup-plugin-terser'
+const { clone } = require('@ctx-core/object')
+const { reject } = require('@ctx-core/array')
+const { style } = require('@ctx-core/sass/svelte')
+const { markup } = require('@ctx-core/markdown/svelte')
+import config from 'sapper/config/rollup'
+import pkg from './package.json'
+const mode = process.env.NODE_ENV
+const dev = mode === 'development'
+const legacy = !!process.env.SAPPER_LEGACY_BUILD
+const __replace = {
+	'process.env.NODE_ENV': JSON.stringify(mode),
+	'process.env.ROOT__PATH': JSON.stringify('/'),
+}
+const extensions__svelte = ['.svelte', '.html', '.md']
 export default {
 	client: {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
-			replace({
+			replace__({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			svelte({
 				dev,
+				extensions: extensions__svelte,
 				hydratable: true,
-				emitCss: true
+				emitCss: true,
+				preprocess: {
+					style,
+					markup,
+				},
 			}),
+			globals__plugin(),
+			builtins__plugin(),
 			resolve(),
 			commonjs(),
-
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
 				runtimeHelpers: true,
@@ -44,44 +59,50 @@ export default {
 					}]
 				]
 			}),
-
 			!dev && terser({
 				module: true
 			})
 		],
 	},
-
 	server: {
 		input: config.server.input(),
 		output: config.server.output(),
 		plugins: [
-			replace({
+			replace__({
 				'process.browser': false,
-				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			svelte({
 				generate: 'ssr',
-				dev
+				dev,
+				extensions: extensions__svelte,
+				preprocess: {
+					style,
+					markup,
+				},
 			}),
 			resolve(),
 			commonjs()
 		],
-		external: Object.keys(pkg.dependencies).concat(
+		external: reject(
+			Object.keys(pkg.dependencies),
+			path => /(REPO__TODO|@ctx-core|@sapper)\/.*/.test(path)
+		).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
 	},
-
 	serviceworker: {
 		input: config.serviceworker.input(),
 		output: config.serviceworker.output(),
 		plugins: [
 			resolve(),
-			replace({
+			replace__({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			commonjs(),
 			!dev && terser()
 		]
 	}
-};
+}
+function replace__(params) {
+	return replace(clone(__replace, params))
+}
