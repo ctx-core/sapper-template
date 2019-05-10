@@ -16,7 +16,7 @@
 		"@ctx-core/dom": "^5.1.1",
 		"@ctx-core/function": "^6.0.0",
 		"@ctx-core/google": "^4.4.8",
-		"@ctx-core/nav": "^6.2.4",
+		"@ctx-core/nav": "^6.2.7",
 		"@ctx-core/object": "^3.3.0",
 		"@ctx-core/sapper": "^5.2.18",
 		"@ctx-core/sass": "^5.1.19",
