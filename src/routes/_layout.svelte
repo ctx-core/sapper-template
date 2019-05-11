@@ -147,13 +147,6 @@
 	:global(p, ul) {
 		margin-bottom: 1.52em;
 	}
-	:global(ul) {
-		padding: 0;
-		list-style: none;
-		:global(li:before) {
-			content: '— ';
-		}
-	}
 	:global(a) {
 		&:hover {
 			text-decoration: underline;
