@@ -1,6 +1,6 @@
 <script>
 	import { join } from 'path'
-	import { __url__edit__source } from './store'
+	import { __url__edit__source } from '../content/store'
 	export let href = ''
 </script>
 

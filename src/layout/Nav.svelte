@@ -2,9 +2,14 @@
 	import { __path__sapper } from '@ctx-core/sapper/store'
 	import { __path__home } from '../route/store'
 	import {
+		__a1__name__root__content,
+		__a1__path__root__content,
+	} from '../content/store'
+	import {
 		__theme__invert,
 		invert__theme,
 	} from '@ctx-core/theme/store'
+	import { _idx } from '@ctx-core/array'
 	import Handle__Nav from '@ctx-core/nav/Handle__Nav.html'
 	import Content__Nav from '@ctx-core/nav/Content__Nav.html'
 	import Item__Nav from '@ctx-core/nav/Item__Nav.html'
@@ -17,7 +22,10 @@
 	register__project_diagram()
 	register__sun_solid()
 	register__moon_regular()
-	$: about_selected = $__path__sapper.startsWith('/about')
+	let idx__selected
+	$: idx__selected =
+		_idx($__a1__path__root__content,
+			path__root__content => $__path__sapper.startsWith(path__root__content))
 </script>
 
 <Handle__Nav class="Handle__Nav__Holochain"></Handle__Nav>
@@ -26,11 +34,13 @@
 		<Item__Nav href="/" class="container__logo">
 			<Icon name="project-diagram" alt="@briantakita-business"></Icon>
 		</Item__Nav>
-		<Item__Nav
-			href="/about/"
-			selected="{about_selected}"
-			class="child_nav"
-		>About</Item__Nav>
+		{#each $__a1__name__root__content as name__root__content,idx}
+			<Item__Nav
+				href="{$__a1__path__root__content[idx]}"
+				selected="{idx__selected === idx}"
+				class="child_nav"
+			>{name__root__content}</Item__Nav>
+		{/each}
 		<div class="theme">
 			<a
 				href="."
