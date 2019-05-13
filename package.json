@@ -1,6 +1,6 @@
 {
-	"name": "__REPO__TODO__",
-	"description": "__REPO__TODO__",
+	"name": "REPO__TODO",
+	"description": "REPO__TODO",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "sapper dev",
@@ -16,6 +16,7 @@
 		"@ctx-core/dom": "^5.1.1",
 		"@ctx-core/function": "^6.0.0",
 		"@ctx-core/google": "^4.4.8",
+		"@ctx-core/markdown": "^3.2.1",
 		"@ctx-core/nav": "^6.2.7",
 		"@ctx-core/object": "^3.3.0",
 		"@ctx-core/sapper": "^5.3.0",

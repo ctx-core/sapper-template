@@ -41,7 +41,7 @@
 </div>
 
 <style type="text/scss">
-	@import '~__REPO__TODO__/src/css/variables';
+	@import '~REPO__TODO/src/css/variables';
 	@import '~@ctx-core/nav/lib';
 	@include Handle__Nav($width__wide: $width__max__tablet);
 	@include Content__Nav($width__wide: $width__max__tablet);

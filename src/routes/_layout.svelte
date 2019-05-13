@@ -48,7 +48,7 @@
 </div>
 
 <style type="text/scss">
-	@import '~__REPO__TODO__/src/css/variables';
+	@import '~REPO__TODO/src/css/variables';
 	:global(*) {
 		box-sizing: border-box;
 	}
