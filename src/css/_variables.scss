@@ -19,9 +19,12 @@ $color__layout: $gray-100;
 $color__layout__invert: $gray-900;
 $color__text: $gray-900;
 $color__text__invert: $gray-100;
-$color__background__code: mix($color__text, $color__layout, 10%);
-$color__background__code__invert: invert($color__background__code);
+$color__background__code: mix($color__text__invert, $color__layout, 10%);
+$color__background__code__invert: mix($color__text, $color__layout, 10%);
 $color__a__mid: mix($color__text, $color__layout, 50%);
+$color__a__mid__invert: mix($color__text__invert, $color__layout__invert, 50%);
+$color__header: $gray-900;
+$color__header__invert: $gray-100;
 $color__background__header: $gray-600;
 $color__background__header__invert: $gray-700;
 

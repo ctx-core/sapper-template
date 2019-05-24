@@ -35,7 +35,7 @@
 <div
 	{version}
 	class="_layout {$__class__layout||''}"
-	class:invert="{$__theme__invert}"
+	class:theme__invert="{$__theme__invert}"
 >
 	<Header></Header>
 
@@ -48,33 +48,33 @@
 	<Footer></Footer>
 </div>
 
-<style type="text/scss">
+<style type="text/scss" global>
 	@import 'src/css/variables';
-	:global(*) {
+	* {
 		box-sizing: border-box;
 	}
-	:global(html) {
+	html {
 		opacity: 0;
 		&.wf-active {
 			opacity: 1;
 		}
 	}
-	:global(body) {
+	body {
 		font-family: 'Source Sans Pro', arial, sans-serif;
 		font-size: 16px;
 		line-height: 1.52;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 	}
-	:global(._layout) {
+	._layout {
 		position: relative;
 		background-color: $color__layout;
 		color: $color__text;
 		min-height: 100vh;
-		&.invert {
+		&.theme__invert {
 			background-color: $color__layout__invert;
 			color: $color__text__invert;
-			:global(a) {
+			a {
 				color: $color__a__invert;
 			}
 		}
@@ -90,11 +90,11 @@
 			z-index: 0;
 		}
 	}
-	:global(a) {
+	a {
 		text-decoration: none;
 		color: $color__a;
 	}
-	:global(.content-wrap) {
+	.content-wrap {
 		width: $width__centering;
 		margin: 0 auto;
 		padding: 0 1.5rem;
@@ -102,61 +102,61 @@
 			width: 100%;
 		}
 	}
-	:global(h1, h2, h3, h4, h5, h6, p, body, a, img, blockquote, pre) {
+	h1, h2, h3, h4, h5, h6, p, body, a, img, blockquote, pre {
 		margin: 0;
 		padding: 0;
 		border: 0;
 	}
-	:global(h1) {
+	h1 {
 		font-size: 1.8em;
 		margin-bottom: 1em;
 	}
-	:global(h2) {
+	h2 {
 		font-size: 1.6em;
 		font-weight: 400;
 		line-height: 1.43;
 	}
-	:global(h3) {
+	h3 {
 		font-style: italic;
 		font-weight: 400;
 		font-size: 1.4em;
 		margin-top: 1.8em;
 		margin-bottom: 0.8em;
 	}
-	:global(.centerig) {
+	.centerig {
 		margin: auto;
 		width: $width__centering;
 		@media (max-width: $width__centering) {
 			width: 100%;
 		}
 	}
-	:global(blockquote) {
+	blockquote {
 		margin: 1.2em 3em;
 		padding-left: 1em;
 		font-style: italic;
 	}
-	:global(hr) {
+	hr {
 		border: 0;
 		border-top: 1px dashed #d2d2d2;
 		height: 0;
 		margin: 1.6em 0;
 	}
-	:global(iframe) {
+	iframe {
 		display: block;
 		margin: 0 auto;
 	}
-	:global(p, ul) {
+	p, ul {
 		margin-bottom: 1.52em;
 	}
-	:global(a) {
+	a {
 		&:hover {
 			text-decoration: underline;
 		}
 	}
-	:global(img) {
+	img {
 		width: 100%;
 	}
-	:global(code) {
+	code {
 		font-family: 'Anonymous Pro', monospace;
 		display: block;
 		padding: 1em;
@@ -180,13 +180,13 @@
 			}
 		}
 	}
-	:global(._layout.invert) {
-		:global(code) {
+	._layout {
+		code {
 			background: $color__background__code__invert;
 			color: $color__text__invert;
 		}
 	}
-	:global(.post) {
+	.post {
 		margin: 1em 0 2.5em;
 	}
 </style>

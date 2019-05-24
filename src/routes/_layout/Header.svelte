@@ -9,7 +9,11 @@
 <style type="text/scss">
 	@import '../css/variables';
 	header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 		height: 3rem;
+		width: 100%;
 		padding: 1rem 0;
 		background: $color__background__header;
 	}
