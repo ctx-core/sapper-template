@@ -7,7 +7,8 @@
 <script>
 	import A__Edit from '../_content/A__Edit.svelte'
 	export let path
+	$: path__edit = path.endsWith('/blog') ? `${path}/index.md` : path
 </script>
 
 <slot></slot>
-<A__Edit href="{path}.md"></A__Edit>
+<A__Edit href="{path__edit}.md"></A__Edit>
