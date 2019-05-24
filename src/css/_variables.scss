@@ -1,3 +1,13 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/vendor/rfs";
+@import "~bootstrap/scss/mixins/box-shadow";
+@import "~bootstrap/scss/mixins/border-radius";
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~bootstrap/scss/mixins/gradients";
+@import "~bootstrap/scss/mixins/hover";
+@import "~bootstrap/scss/mixins/transition";
+@import "src/css/variables__bootstrap";
+
 $height__header: 110px;
 $height__header__tablet: '#{$height__header / 2} + 0.5rem';
 $width__widescreen: 1400px;
@@ -5,16 +15,15 @@ $width__centering: 1200px;
 $width__max__tablet: 768px;
 $width__max__phone: 480px;
 
-$color__layout: #152E44;
-$color__layout__invert: #FFFFFF;
-$color__text: #FFFFFF;
-$color__text__invert: invert($color__text);
+$color__layout: $gray-100;
+$color__layout__invert: $gray-900;
+$color__text: $gray-900;
+$color__text__invert: $gray-100;
 $color__background__code: mix($color__text, $color__layout, 10%);
 $color__background__code__invert: invert($color__background__code);
 $color__a__mid: mix($color__text, $color__layout, 50%);
-$color__header: #B5FFE1;
-$color__header__invert: #4A9E91;
-$color__highlight__text: #070707;
+$color__background__header: $gray-600;
+$color__background__header__invert: $gray-700;
 
-$color__a: lightblue;
-$color__a__invert: blue;
+$color__a: $gray-700;
+$color__a__invert: $gray-300;
