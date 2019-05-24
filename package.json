@@ -16,6 +16,7 @@
 		"@ctx-core/dom": "^5.2.0",
 		"@ctx-core/function": "^8.0.0",
 		"@ctx-core/google": "^4.4.17",
+		"@ctx-core/html": "^6.0.32",
 		"@ctx-core/markdown": "^5.0.0",
 		"@ctx-core/nav": "^7.0.2",
 		"@ctx-core/object": "^4.2.2",
