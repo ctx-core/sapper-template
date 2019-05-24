@@ -24,6 +24,11 @@
 			<FA_project_diagram_solid></FA_project_diagram_solid>
 		</Item__Nav>
 		<Item__Nav
+			href="/blog"
+			selected="{$__path__sapper.startsWith('/blog')}"
+			class="child_nav {$__class__theme__invert}"
+		>blog</Item__Nav>
+		<Item__Nav
 			href="/about"
 			selected="{$__path__sapper.startsWith('/about')}"
 			class="child_nav {$__class__theme__invert}"

@@ -74,9 +74,6 @@
 		&.theme__invert {
 			background-color: $color__layout__invert;
 			color: $color__text__invert;
-			a {
-				color: $color__a__invert;
-			}
 		}
 		main {
 			position: relative;
@@ -93,6 +90,11 @@
 	a {
 		text-decoration: none;
 		color: $color__a;
+	}
+	._layout.theme__invert {
+		a {
+			color: $color__a__invert;
+		}
 	}
 	.content-wrap {
 		width: $width__centering;
@@ -180,7 +182,7 @@
 			}
 		}
 	}
-	._layout {
+	._layout.theme__invert {
 		code {
 			background: $color__background__code__invert;
 			color: $color__text__invert;
