@@ -24,7 +24,6 @@
 		"@ctx-core/sass": "^6.0.8",
 		"@ctx-core/theme": "^1.1.0",
 		"@ctx-core/uuid": "^3.0.0",
-		"bootstrap": "^4.3.1",
 		"compression": "^1.7.4",
 		"esm": "^3.2.25",
 		"highlight.js": "^9.15.6",
