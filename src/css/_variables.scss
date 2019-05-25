@@ -8,12 +8,13 @@
 @import "~bootstrap/scss/mixins/transition";
 @import "src/css/variables__bootstrap";
 
-$height__header: 110px;
+$height__header: 3rem;
 $height__header__tablet: '#{$height__header / 2} + 0.5rem';
 $width__widescreen: 1400px;
 $width__centering: 1200px;
 $width__max__tablet: 768px;
 $width__max__phone: 480px;
+$width__wide: $width__max__tablet;
 
 $color__layout: $gray-100;
 $color__layout__invert: $gray-900;

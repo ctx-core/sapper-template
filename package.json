@@ -18,7 +18,7 @@
 		"@ctx-core/google": "^4.4.17",
 		"@ctx-core/html": "^6.0.32",
 		"@ctx-core/markdown": "^5.0.0",
-		"@ctx-core/nav": "^7.0.2",
+		"@ctx-core/nav": "^8.0.0",
 		"@ctx-core/object": "^4.2.2",
 		"@ctx-core/sapper": "^6.0.3",
 		"@ctx-core/sass": "^6.0.8",

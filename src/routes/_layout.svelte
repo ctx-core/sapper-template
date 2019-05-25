@@ -82,7 +82,7 @@
 			overflow: hidden;
 			min-height: 600px;
 			padding: 1rem 0;
-			margin: 0 auto;
+			margin: $height__header auto 0;
 			box-sizing: border-box;
 			z-index: 0;
 		}
@@ -125,7 +125,7 @@
 		margin-top: 1.8em;
 		margin-bottom: 0.8em;
 	}
-	.centerig {
+	.centering {
 		margin: auto;
 		width: $width__centering;
 		@media (max-width: $width__centering) {

@@ -7,15 +7,19 @@
 </header>
 
 <style type="text/scss">
-	@import '../css/variables';
+	@import 'src/css/variables';
 	header {
+		position: fixed;
 		display: flex;
+		top: 0;
+		left: 0;
 		flex-direction: row;
 		align-items: center;
-		height: 3rem;
+		height: $height__header;
 		width: 100%;
 		padding: 1rem 0;
 		background: $color__background__header;
+		z-index: 1;
 	}
 	:global(._layout.invert) {
 		header {
