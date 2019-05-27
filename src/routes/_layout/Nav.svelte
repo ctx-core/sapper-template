@@ -9,9 +9,9 @@
 	import Handle__Nav from '@ctx-core/nav/Handle__Nav.svelte'
 	import Content__Nav from '@ctx-core/nav/Content__Nav.svelte'
 	import Item__Nav from '@ctx-core/nav/Item__Nav.svelte'
-	import FA_project_diagram_solid from '@ctx-core/font-awesome/ui/FA-project-diagram-solid.html'
-	import FA_sun_solid from '@ctx-core/font-awesome/ui/FA-sun-solid.html'
-	import FA_moon_regular from '@ctx-core/font-awesome/ui/FA-moon-regular.html'
+	import FA_project_diagram_solid from '@ctx-core/font-awesome/ui/FA-project-diagram-solid.svelte'
+	import FA_sun_solid from '@ctx-core/font-awesome/ui/FA-sun-solid.svelte'
+	import FA_moon_regular from '@ctx-core/font-awesome/ui/FA-moon-regular.svelte'
 </script>
 
 <Handle__Nav class="Handle__Nav__Holochain {$__class__theme__invert}"></Handle__Nav>
