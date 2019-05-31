@@ -625,9 +625,9 @@
     "@ctx-core/logger" "^3.0.15"
     "@ctx-core/object" "^4.0.0"
 
-"@ctx-core/font-awesome@^7.13.1":
+"@ctx-core/fontawesome@^7.13.1":
   version "7.13.1"
-  resolved "https://registry.yarnpkg.com/@ctx-core/font-awesome/-/font-awesome-7.13.1.tgz#2901ce9eb205c745aba20cb5418998a921b24284"
+  resolved "https://registry.yarnpkg.com/@ctx-core/fontawesome/-/fontawesome-7.13.1.tgz#2901ce9eb205c745aba20cb5418998a921b24284"
   dependencies:
     "@ctx-core/array" "^13.0.2"
     "@ctx-core/combinators" "^3.1.0"
@@ -679,7 +679,7 @@
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/@ctx-core/nav/-/nav-6.3.0.tgz#76fda19fc4b55cff7294f668a717e60dcd423be5"
   dependencies:
-    "@ctx-core/font-awesome" "^7.13.1"
+    "@ctx-core/fontawesome" "^7.13.1"
 
 "@ctx-core/object@^3.3.0":
   version "3.3.0"
