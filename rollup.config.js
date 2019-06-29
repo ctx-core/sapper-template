@@ -33,6 +33,7 @@ const preprocess = _preprocess([
 	preprocess__markdown,
 	preprocess__svg,
 ])
+const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning)
 export default {
 	client: {
 		input: config.client.input(),
@@ -50,7 +51,9 @@ export default {
 			}),
 			globals__plugin(),
 			builtins__plugin(),
-			resolve(),
+			resolve({
+				browser: true
+			}),
 			commonjs(),
 			legacy && babel({
 				extensions: ['.js', '.mjs', '.html', '.svelte'],
@@ -72,6 +75,8 @@ export default {
 				module: true
 			})
 		],
+
+		onwarn,
 	},
 	server: {
 		input: config.server.input(),
@@ -95,6 +100,8 @@ export default {
 		).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
+
+		onwarn,
 	},
 	serviceworker: {
 		input: config.serviceworker.input(),
@@ -106,7 +113,8 @@ export default {
 			}),
 			commonjs(),
 			!dev && terser()
-		]
+		],
+		onwarn,
 	}
 }
 function replace__(params) {
