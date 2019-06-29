@@ -52,50 +52,70 @@
 	@include Item__Nav__selected-underline($background: $color__a);
 	.container__Content__Nav {
 		width: 100%;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		&.path__home {
+			.child_nav {
+				display: none;
+				@media(max-width: #{$width__wide}) {
+					display: block;
+				}
+			}
+		}
+		.theme {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 0 0 auto;
+			@media(max-width: #{$width__wide}) {
+				position: static;
+				a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+			&.theme__invert {
+				svg {
+					fill: $color__header__invert;
+				}
+			}
+			svg {
+				height: 1.2rem;
+				width: 1.2rem;
+				fill: $color__header;
+			}
+		}
+		> * {
+			a {
+				margin-right: 0.8rem;
+				color: $color__header;
+				fill: $color__header;
+				@media(max-width: #{$width__wide}) {
+					padding: 0.4rem 0;
+				}
+				&.theme__invert {
+					color: $color__header__invert;
+				}
+				&.selected {
+					box-shadow: 0 2px 0 $color__a__mid;
+				}
+			}
+		}
 	}
-	@include Item__Nav() {
+	@include in-Item__Nav() {
+		flex: 0;
 		&.theme__invert {
 			&.selected {
 				&::after {
 					background: $color__a__invert;
 				}
-			}
-		}
-	}
-	@media(max-width: #{$width__wide}) {
-		@include Item__Nav__selected-background(
-			$background: $color__a
-		);
-		@include Item__Nav() {
-			&.theme__invert {
-				&.selected {
+				@media(max-width: #{$width__wide}) {
 					background: invert($color__a__invert);
 				}
 			}
 		}
-		@include Item__Nav__cancel-selected-underline();
-	}
-	@include Content__Nav__slide-from-right($width__wide: $width__wide);
-	.Handle__Nav {
-		fill: $color__a;
-		@media(max-width: #{$width__wide}) {
-			position: absolute;
-			top: 0.6rem;
-			right: 0.4rem;
-		}
-		&.theme__invert {
-			fill: $color__a__invert;
-		}
-	}
-	.Content__Nav {
-		&.theme__invert {
-			@media(max-width: #{$width__wide}) {
-				background-color: mix($color__layout__invert, $color__background__header__invert, 50%);
-			}
-		}
-	}
-	@include Item__Nav() {
-		flex: 0;
 		&.container__logo {
 			margin-right: 1.5rem;
 			@media(max-width: #{$width__wide}) {
@@ -119,7 +139,32 @@
 			fill: $color__header;
 		}
 	}
-	.Content__Nav {
+	@media(max-width: #{$width__wide}) {
+		@include Item__Nav__selected-background(
+			$background: $color__a
+		);
+		@include Item__Nav__cancel-selected-underline();
+	}
+	@include Content__Nav__slide-from-right($width__wide: $width__wide);
+	.Handle__Nav {
+		fill: $color__a;
+		@media(max-width: #{$width__wide}) {
+			position: absolute;
+			top: 0.6rem;
+			right: 0.4rem;
+		}
+		&.theme__invert {
+			fill: $color__a__invert;
+		}
+	}
+	@include in-Content__Nav {
+		display: flex;
+		flex-direction: row;
+		&.theme__invert {
+			@media(max-width: #{$width__wide}) {
+				background-color: mix($color__layout__invert, $color__background__header__invert, 50%);
+			}
+		}
 		height: auto;
 		z-index: 1;
 		@media(max-width: #{$width__wide}) {
@@ -128,58 +173,6 @@
 			top: 0;
 			height: 100vh;
 			background-color: mix($color__layout, $color__background__header, 50%);
-		}
-		.dialog {
-			.container__slot__Content__Nav {
-				position: relative;
-				display: flex;
-				&.path__home {
-					.child_nav {
-						display: none;
-						@media(max-width: #{$width__wide}) {
-							display: block;
-						}
-					}
-				}
-				.theme {
-					margin: 0 1rem 0 auto;
-					@media(max-width: #{$width__wide}) {
-						position: static;
-						margin: 0;
-						a {
-							display: flex;
-							align-items: center;
-							justify-content: center;
-						}
-					}
-					&.theme__invert {
-						svg {
-							fill: $color__header__invert;
-						}
-					}
-					svg {
-						height: 1.2rem;
-						width: 1.2rem;
-						fill: $color__header;
-					}
-				}
-				> * {
-					a {
-						margin-right: 0.8rem;
-						color: $color__header;
-						fill: $color__header;
-						@media(max-width: #{$width__wide}) {
-							padding: 0.4rem 0;
-						}
-						&.theme__invert {
-							color: $color__header__invert;
-						}
-						&.selected {
-							box-shadow: 0 2px 0 $color__a__mid;
-						}
-					}
-				}
-			}
 		}
 	}
 </style>

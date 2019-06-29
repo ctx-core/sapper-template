@@ -12,7 +12,7 @@ const { reject } = require('@ctx-core/array')
 const { _preprocess } = require('@ctx-core/svelte/preprocess')
 const { _preprocess__sass } = require('@ctx-core/sass/svelte')
 const { _preprocess__svg } = require('@ctx-core/svg/svelte')
-import { mdsvex } from 'mdsvex'
+const { _preprocess__markdown } = require('@ctx-core/markdown/svelte')
 import config from 'sapper/config/rollup'
 import pkg from './package.json'
 const mode = process.env.NODE_ENV
@@ -24,13 +24,13 @@ const __replace = {
 }
 const extensions__svelte = ['.svelte', '.html', '.md']
 const preprocess__sass = _preprocess__sass()
-const preprocess__mdsvex = mdsvex({
+const preprocess__markdown = _preprocess__markdown({
 	extension: '.md',
 })
 const preprocess__svg = _preprocess__svg()
 const preprocess = _preprocess([
 	preprocess__sass,
-	preprocess__mdsvex,
+	preprocess__markdown,
 	preprocess__svg,
 ])
 export default {
