@@ -13,7 +13,7 @@
 </script>
 
 <script>
-	import A__Edit from '../_content/A__Edit.svelte'
+	import A__Edit from '@myproject/content/A__Edit.svelte'
 	export let path
 	export let a1__name = null
 </script>

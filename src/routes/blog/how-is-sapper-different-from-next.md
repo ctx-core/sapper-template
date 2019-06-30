@@ -1,7 +1,7 @@
-<script context=module>
+```js module
 	export const slug = 'how-is-sapper-different-from-next'
 	export const title = 'How is Sapper different from Next.js?'
-</script>
+```
 
 <svelte:head>
 	<title>{title}</title>

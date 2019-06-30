@@ -1,7 +1,7 @@
-<script context=module>
+```js module
 	export const slug = 'how-to-use-sapper'
 	export const title = 'How to use Sapper?'
-</script>
+```
 
 <svelte:head>
 	<title>{title}</title>

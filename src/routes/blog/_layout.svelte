@@ -5,7 +5,8 @@
 </script>
 
 <script>
-	import A__Edit from '../_content/A__Edit.svelte'
+	import A__Edit from '@myproject/content/A__Edit.svelte'
+	export let segment
 	export let path
 	$: path__edit = path.endsWith('/blog') ? `${path}/index.md` : path
 </script>

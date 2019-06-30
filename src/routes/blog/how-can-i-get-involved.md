@@ -1,7 +1,7 @@
-<script context=module>
+```js module
 	export const slug = 'how-can-i-get-involved'
 	export const title = 'How can I get involved?'
-</script>
+```
 
 <svelte:head>
 	<title>{title}</title>
