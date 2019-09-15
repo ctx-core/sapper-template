@@ -34,6 +34,7 @@ const preprocess = _preprocess([
 	preprocess__svg,
 ])
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning)
+const dedupe = importee => importee === 'svelte' || importee.startsWith('svelte/')
 export default {
 	client: {
 		input: config.client.input(),
@@ -52,7 +53,8 @@ export default {
 			globals__plugin(),
 			builtins__plugin(),
 			resolve({
-				browser: true
+				browser: true,
+				dedupe
 			}),
 			commonjs(),
 			legacy && babel({
@@ -91,7 +93,9 @@ export default {
 				extensions: extensions__svelte,
 				preprocess,
 			}),
-			resolve(),
+			resolve({
+				dedupe
+			}),
 			commonjs()
 		],
 		external: reject(

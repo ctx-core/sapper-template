@@ -43,7 +43,7 @@ There are three simple rules for naming the files that define your routes:
 
 The [static](static) directory contains any static assets that should be available. These are served using [sirv](https://github.com/lukeed/sirv).
 
-In your [service-worker.js](app/service-worker.js) file, you can import these as `files` from the generated manifest...
+In your [service-worker.js](src/service-worker.js) file, you can import these as `files` from the generated manifest...
 
 ```js
 import { files } from '@sapper/service-worker';
@@ -69,11 +69,11 @@ now
 ```
 
 
-## Using external components with webpack
+## Using external components
 
 When using Svelte components installed from npm, such as [@sveltejs/svelte-virtual-list](https://github.com/sveltejs/svelte-virtual-list), Svelte needs the original component source (rather than any precompiled JavaScript that ships with the component). This allows the component to be rendered server-side, and also keeps your client-side app smaller.
 
-Because of that, it's essential that webpack doesn't treat the package as an *external dependency*. You can either modify the `externals` option under `server` in [webpack.config.js](webpack.config.js), or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
+Because of that, it's essential that the bundler doesn't treat the package as an *external dependency*. You can either modify the `external` option under `server` in [rollup.config.js](rollup.config.js) or the `externals` option in [webpack.config.js](webpack.config.js), or simply install the package to `devDependencies` rather than `dependencies`, which will cause it to get bundled (and therefore compiled) with your app:
 
 ```bash
 npm install -D @sveltejs/svelte-virtual-list
