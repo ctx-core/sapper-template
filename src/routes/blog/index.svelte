@@ -1,13 +1,13 @@
 <script context="module">
-	export async function preload({ params, query }) {
-		const response = await this.fetch(`/blog.json`)
-		const a1__post = await response.json()
-		return { a1__post }
-	}
+export async function preload({ params, query }) {
+	const response = await this.fetch(`/blog.json`)
+	const a1__post = await response.json()
+	return { a1__post }
+}
 </script>
 
 <script>
-	export let a1__post
+export let a1__post
 </script>
 
 <svelte:head>
