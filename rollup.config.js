@@ -100,7 +100,7 @@ export default {
 		],
 		external: reject(
 			Object.keys(pkg.dependencies),
-			path => /(@myproject\/|@ctx-core|@sapper)\/.*/.test(path)
+			path => /(@myproject|@ctx-core|@sapper)\/.*/.test(path)
 		).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
