@@ -69,12 +69,12 @@
 	}
 	._layout {
 		position: relative;
-		background-color: $color__layout;
-		color: $color__text;
+		background-color: $color--layout;
+		color: $color--text;
 		min-height: 100vh;
 		&.theme__invert {
-			background-color: $color__layout__invert;
-			color: $color__text__invert;
+			background-color: $color--layout--invert;
+			color: $color--text--invert;
 		}
 		main {
 			position: relative;
@@ -83,25 +83,25 @@
 			overflow: hidden;
 			min-height: 600px;
 			padding: 1rem 0;
-			margin: $height__header auto 0;
+			margin: $height--header auto 0;
 			box-sizing: border-box;
 			z-index: 0;
 		}
 	}
 	a {
 		text-decoration: none;
-		color: $color__a;
+		color: $color--a;
 	}
 	._layout.theme__invert {
 		a {
-			color: $color__a__invert;
+			color: $color--a--invert;
 		}
 	}
 	.content-wrap {
-		width: $width__centering;
+		width: $width--centering;
 		margin: 0 auto;
 		padding: 0 1.5rem;
-		@media (max-width: $width__centering) {
+		@media (max-width: $width--centering) {
 			width: 100%;
 		}
 	}
@@ -128,8 +128,8 @@
 	}
 	.centering {
 		margin: auto;
-		width: $width__centering;
-		@media (max-width: $width__centering) {
+		width: $width--centering;
+		@media (max-width: $width--centering) {
 			width: 100%;
 		}
 	}
@@ -163,8 +163,8 @@
 		font-family: 'Anonymous Pro', monospace;
 		display: block;
 		padding: 1em;
-		background: $color__background__code;
-		color: $color__text;
+		background: $color--background--code;
+		color: $color--text;
 		border-width: 1px;
 		border-style: solid;
 		&.lang-markdown {
@@ -185,8 +185,8 @@
 	}
 	._layout.theme__invert {
 		code {
-			background: $color__background__code__invert;
-			color: $color__text__invert;
+			background: $color--background--code--invert;
+			color: $color--text--invert;
 		}
 	}
 	.post {
