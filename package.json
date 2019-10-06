@@ -14,6 +14,7 @@
 	"dependencies": {
 		"@ctx-core/array": "^15.3.29",
 		"@ctx-core/markdown": "^7.0.119",
+		"@ctx-core/object": "^6.1.16",
 		"compression": "^1.7.4",
 		"esm": "^3.2.25",
 		"highlight.js": "^9.15.10",
