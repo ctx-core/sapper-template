@@ -1,11 +1,19 @@
 # sapper-template
 
-The default [Sapper](https://github.com/sveltejs/sapper) template, with branches for Rollup and webpack. To clone it and get started:
+The default [Sapper](https://github.com/sveltejs/sapper) template, available for Rollup and webpack.
+
+
+## Getting started
+
+
+### Using `degit`
+
+[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository. Use either the `rollup` or `webpack` branch in `sapper-template`:
 
 ```bash
 npx degit ctx-core/sapper-template#ctx-core my-app
 cd my-app
-npm install # or yarn!
+npm install # or yarn
 npm run dev
 ```
 
