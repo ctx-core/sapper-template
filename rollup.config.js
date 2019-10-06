@@ -9,12 +9,12 @@ import babel from 'rollup-plugin-babel'
 import { terser } from 'rollup-plugin-terser'
 const { clone } = require('@ctx-core/object')
 const { reject } = require('@ctx-core/array')
-const { _preprocess } = require('@ctx-core/svelte/preprocess')
 const { _preprocess__sass } = require('@ctx-core/sass/svelte')
 const { _preprocess__svg } = require('@ctx-core/svg/svelte')
 const { _preprocess__markdown } = require('@ctx-core/markdown/svelte')
 import config from 'sapper/config/rollup'
 import pkg from './package.json'
+const { _preprocess } = require('@ctx-core/svelte/preprocess')
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
@@ -100,7 +100,7 @@ export default {
 		],
 		external: reject(
 			Object.keys(pkg.dependencies),
-			path => /(@myproject\/dev|@ctx-core|@sapper)\/.*/.test(path)
+			path => /(@myproject\/|@ctx-core|@sapper)\/.*/.test(path)
 		).concat(
 			require('module').builtinModules || Object.keys(process.binding('natives'))
 		),
