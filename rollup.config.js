@@ -54,7 +54,7 @@ export default {
 			builtins__plugin(),
 			resolve({
 				browser: true,
-//				dedupe
+				dedupe
 			}),
 			commonjs(),
 			legacy && babel({
@@ -94,7 +94,7 @@ export default {
 				preprocess,
 			}),
 			resolve({
-//				dedupe
+				dedupe
 			}),
 			commonjs()
 		],
