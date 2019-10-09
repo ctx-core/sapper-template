@@ -10,7 +10,11 @@ const dev = process.env.NODE_ENV === 'development'
 
 <h1>{status}</h1>
 
-<p>{error.message}</p>
+{#if typeof error.message === 'string'}
+	<p>{error.message}</p>
+{:else if typeof error.message === 'object'}
+	<code>{JSON.stringify(error)}</code>
+{/if}
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>
