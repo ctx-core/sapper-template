@@ -20,7 +20,7 @@ const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 const __replace = {
 	'process.env.NODE_ENV': JSON.stringify(mode),
-	'process.env.ROOT__PATH': JSON.stringify('/'),
+	'process.env.ROOT_PATH': JSON.stringify('/'),
 }
 const extensions__svelte = ['.svelte', '.html', '.md']
 const preprocess__sass = _preprocess__sass()
